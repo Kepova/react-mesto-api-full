@@ -1,0 +1,10 @@
+.element {
+  border-radius: 10px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, max-content);
+  row-gap: 25px;
+  align-items: center;
+  position: relative;
+  padding-bottom: 20px;
+}

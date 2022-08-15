@@ -1,0 +1,10 @@
+.popup_for_register-response {
+    visibility: hidden;
+    opacity: 0;
+    /* width: 430px;
+    height: 330px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .15); */
+}

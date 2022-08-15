@@ -1,0 +1,16 @@
+.popup__input-login {
+    width: 100%;
+    min-height: 27px;
+    padding: 0;
+    border: none;
+    border-bottom: 2px solid #CCCCCC;
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.popup__input-login::-webkit-input-placeholder {
+    color: #fff;
+}
