@@ -1,3 +1,4 @@
+import React from 'react';
 import registerOk from '../images/register_ok.svg';
 import registerFail from '../images/register_fail.svg';
 

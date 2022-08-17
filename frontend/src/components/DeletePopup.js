@@ -1,3 +1,4 @@
+import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
 function DeletePopup({ card, onClose, onCardDelete, loggedIn }) {
