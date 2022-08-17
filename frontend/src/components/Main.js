@@ -1,10 +1,9 @@
 import { useContext } from 'react';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
-import { api } from '../utils/api';
 import Card from './Card';
 
 function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick, cards, onCardLike, onCardDeletePopup }) {
-    const { name, about, avatar, _id } = useContext(CurrentUserContext);
+    const { name, about, avatar } = useContext(CurrentUserContext);
 
     const cardsElements = cards.map((card) => (
         <Card card={card}
