@@ -15,7 +15,7 @@ export const register = ({email, password}) => {
     return fetch(`${BASE_URL}/signup`, {
         method: 'POST',
         headers: {
-            "Access-Control-Request-Headers": "https://mesto.kepova.nomoredomains.sbs",
+            "access-control-request-headers": "https://mesto.kepova.nomoredomains.sbs",
             "Content-Type": "application/json"
         },
         body: JSON.stringify({ email, password })
@@ -27,7 +27,7 @@ export const login = ({email, password}) => {
     return fetch(`${BASE_URL}/signin`, {
         method: 'POST',
         headers: {
-            "Access-Control-Request-Headers": "https://mesto.kepova.nomoredomains.sbs",
+            "access-control-request-headers": "https://mesto.kepova.nomoredomains.sbs",
             "Content-Type": "application/json"
         },
         body: JSON.stringify({ email, password })
@@ -39,7 +39,7 @@ export const getUserData = (jwt) => {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
         headers: {
-            "Access-Control-Request-Headers": "https://mesto.kepova.nomoredomains.sbs",
+            "access-control-request-headers": "https://mesto.kepova.nomoredomains.sbs",
             "Content-Type": "application/json",
             "Authorization": `Bearer ${jwt}`
         }

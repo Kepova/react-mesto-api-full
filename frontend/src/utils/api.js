@@ -82,7 +82,7 @@ export const api = new Api({
   baseUrl: 'https://api.mesto.kepova.nomoredomains.sbs',
   headers: {
     // authorization: '4a199308-096c-41cb-b4ac-4703709cab9f',
-    'Access-Control-Request-Headers': 'https://mesto.kepova.nomoredomains.sbs',
+    'access-control-request-headers': 'https://mesto.kepova.nomoredomains.sbs',
     'Content-Type': 'application/json'
   }
 });
