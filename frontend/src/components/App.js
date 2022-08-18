@@ -98,14 +98,15 @@ function App() {
   const handleLogin = ({ email, password }) => {
     login({ email, password })
       .then((data) => {
-        if (data.email) {
+        console.log(data);
+        if (data) {
           // localStorage.setItem('jwt', data.token);
           setLoggedIn(true);
           history.push('/');
         }
       })
       .catch((err => {
-        console.log(err);
+        console.log(err, 'no');
         setIsRegisterResponsePopup('fail');
       }))
   }
