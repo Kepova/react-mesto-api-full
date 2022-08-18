@@ -98,8 +98,8 @@ function App() {
   const handleLogin = ({ email, password }) => {
     login({ email, password })
       .then((data) => {
-        if (data.token) {
-          localStorage.setItem('jwt', data.token);
+        if (data.email) {
+          // localStorage.setItem('jwt', data.token);
           setLoggedIn(true);
           history.push('/');
         }
