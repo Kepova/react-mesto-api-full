@@ -5,6 +5,10 @@ const NotFoundError = require('../errors/not-found-err');
 const BadRequestError = require('../errors/bad-request-err');
 const ConflictError = require('../errors/conflict-err');
 
+const allowedCors = [
+  'https://mesto.kepova.nomoredomains.sbs',
+];
+
 const JWT_SECRET = '4cd0e940dc8ed3847be726922d7252b954eeb37d95fbbb090d3e8a33dfafa7f8';
 const SALT_ROUNDS = 10;
 
@@ -75,6 +79,10 @@ const createUser = (req, res, next) => {
 };
 
 const login = (req, res, next) => {
+  const { origin } = req.headers;
+  if (allowedCors.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
   const { email, password } = req.body;
   User.findUserByCredentials({ email, password })
     .then((user) => {
