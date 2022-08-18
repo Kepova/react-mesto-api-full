@@ -27,10 +27,11 @@ export const login = ({email, password}) => {
     return fetch(`${BASE_URL}/signin`, {
         method: 'POST',
         headers: {
+            "Access-Control-Allow-Origin": "https://mesto.kepova.nomoredomains.sbs",
             "access-control-request-headers": "https://mesto.kepova.nomoredomains.sbs",
             "Content-Type": "application/json"
         },
-        body: { email, password }
+        body: JSON.parse({ email, password })
     })
         .then(CheckResponse)
 }
