@@ -3,6 +3,8 @@ export const BASE_URL = 'https://api.mesto.kepova.nomoredomains.sbs';
 const CheckResponse = (res) => {
 
     if (res.ok) {
+        console.log(res.json());
+        console.log(res);
         return res.json();
     }
     return res.json()
