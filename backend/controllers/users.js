@@ -83,7 +83,6 @@ const login = (req, res, next) => {
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', true);
-    res.end();
   }
   User.findUserByCredentials({ email, password })
     .then((user) => {
