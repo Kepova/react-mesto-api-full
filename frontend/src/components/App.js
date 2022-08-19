@@ -39,12 +39,12 @@ function App() {
     if (loggedIn) {
       history.push('/');
       Promise.all([api.getUser(), api.getInitialCards()])
-        .then(([userData, res]) => {
+        .then(([userData, PreCardsData]) => {
           // установка данных пользователя
           setCurrentUser(userData);
           //начальные карточки
-          console.log(res);
-          const cardsData = res.map((card) => {
+          console.log(PreCardsData);
+          const cardsData = PreCardsData.map((card) => {
             return {
               name: card.name,
               link: card.link,
