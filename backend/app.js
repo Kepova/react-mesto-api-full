@@ -29,9 +29,7 @@ app.use(requestLogger); // логгер запросов
 
 app.use((req, res, next) => {
   const { origin } = req.headers;
-  console.log(origin);
   const { method } = req;
-  console.log(method);
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS';
   const requestHeaders = req.headers['access-control-request-headers'];
 
