@@ -6,8 +6,8 @@ const CheckResponse = (res) => {
     }
     return res
         .then((data) => {
-            throw new Error(data.message);
-        })
+        throw new Error(data.message);
+    })
 }
 
 export const register = ({ email, password }) => {

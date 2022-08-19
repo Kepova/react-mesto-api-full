@@ -92,8 +92,7 @@ const login = (req, res, next) => {
         httpOnly: true,
         SameSite: 'None',
         secure: true,
-      })
-        .send({ email: user.email });
+      }).send({ email: user.email });
     })
     .catch(next);
 };
