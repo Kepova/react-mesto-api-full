@@ -69,7 +69,8 @@ function App() {
       getUserData()
         .then((response) => {
           if (response) {
-            setUserEmail(response.data.email);
+            console.log(response)
+            setUserEmail(response.email);
             setLoggedIn(true);
           }
         })
