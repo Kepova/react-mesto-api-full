@@ -74,11 +74,11 @@ const createUser = (req, res, next) => {
     .catch(next);
 };
 
-const allowedCors = [
-  'https://mesto.kepova.nomoredomains.sbs',
-];
 const login = (req, res, next) => {
   const { email, password } = req.body;
+  const allowedCors = [
+    'https://mesto.kepova.nomoredomains.sbs',
+  ];
   const { origin } = req.headers;
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);

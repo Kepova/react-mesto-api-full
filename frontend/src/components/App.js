@@ -67,6 +67,7 @@ function App() {
   //Проверка токена
   const checkToken = () => {
     const jwt = document.cookie.jwt;
+    console.log(document.cookies.jwt)
     if (jwt) {
       getUserData()
         .then((response) => {
