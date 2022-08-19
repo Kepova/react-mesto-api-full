@@ -40,6 +40,7 @@ function App() {
       history.push('/');
       Promise.all([api.getUser(), api.getInitialCards()])
         .then(([userData, PreCardsData]) => {
+          console.log(userData);
           // установка данных пользователя
           setCurrentUser(userData);
           //начальные карточки

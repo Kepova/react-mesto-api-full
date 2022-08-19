@@ -92,7 +92,7 @@ const login = (req, res, next) => {
         httpOnly: true,
         SameSite: 'None',
         secure: true,
-      }).send({ email: user.email });
+      }).json({ email: user.email });
     })
     .catch(next);
 };
