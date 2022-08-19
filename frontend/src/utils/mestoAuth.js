@@ -2,12 +2,14 @@ export const BASE_URL = 'https://api.mesto.kepova.nomoredomains.sbs';
 
 const CheckResponse = (res) => {
     if (res.ok) {
-        return res;
+        return res.json();
+    } else {
+        return Promise.reject(`Ошибка: ${res.status}`)
     }
-    return res
-        .then((data) => {
-        throw new Error(data.message);
-    })
+    // return res
+    //     .then((data) => {
+    //     throw new Error(data.message);
+    // })
 }
 
 export const register = ({ email, password }) => {
