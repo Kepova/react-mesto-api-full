@@ -26,6 +26,7 @@ export const register = ({email, password}) => {
 export const login = ({email, password}) => {
     return fetch(`${BASE_URL}/signin`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
             "Access-Control-Allow-Origin": "https://mesto.kepova.nomoredomains.sbs",
             "access-control-request-headers": "https://mesto.kepova.nomoredomains.sbs",
@@ -36,13 +37,14 @@ export const login = ({email, password}) => {
         .then(CheckResponse)
 }
 
-export const getUserData = (jwt) => {
+export const getUserData = () => {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
+        credentials: 'include',
         headers: {
             "access-control-request-headers": "https://mesto.kepova.nomoredomains.sbs",
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${jwt}`
+            // "Authorization": `Bearer ${jwt}`
         }
     })
         .then(CheckResponse)

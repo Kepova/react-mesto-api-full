@@ -64,9 +64,9 @@ function App() {
 
   //Проверка токена
   const checkToken = () => {
-    const jwt = localStorage.getItem('jwt');
+    const jwt = document.cookie.jwt;
     if (jwt) {
-      getUserData(jwt)
+      getUserData()
         .then((response) => {
           if (response) {
             setUserEmail(response.data.email);
