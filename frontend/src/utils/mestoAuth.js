@@ -32,7 +32,7 @@ export const login = ({email, password}) => {
             "access-control-request-headers": "https://mesto.kepova.nomoredomains.sbs",
             "Content-Type": "application/json"
         },
-        body: { email, password }
+        body: JSON.stringify({ email, password })
     })
         .then(CheckResponse)
 }
