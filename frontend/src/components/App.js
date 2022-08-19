@@ -43,6 +43,7 @@ function App() {
           // установка данных пользователя
           setCurrentUser(userData);
           //начальные карточки
+          console.log(res);
           const cardsData = res.map((card) => {
             return {
               name: card.name,
