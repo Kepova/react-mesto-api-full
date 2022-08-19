@@ -31,7 +31,7 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
-    checkToken();
+    handleEmailHeader();
   }, []);
 
   // Получение данных
@@ -64,20 +64,19 @@ function App() {
     }
   }, [loggedIn]);
 
-  //Проверка токена
-  const checkToken = () => {
+  // установить email текущего пользователя в шапке сайта
+  const handleEmailHeader = () => {
       getUserData()
-        .then((response) => {
-          if (response) {
-            console.log(response)
-            setUserEmail(response.email);
+        .then((user) => {
+          if (user) {
+            setUserEmail(user.email);
             setLoggedIn(true);
           }
         })
         .catch((err => {
           console.log(err);
         }))
-  }
+  };
 
   // Регистрация
   const handleRegister = ({ email, password }) => {
@@ -92,7 +91,7 @@ function App() {
         console.log(err);
         setIsRegisterResponsePopup('fail');
       }))
-  }
+  };
 
   //Авторизация
   const handleLogin = ({ email, password }) => {
@@ -109,13 +108,13 @@ function App() {
         console.log(err, 'no');
         setIsRegisterResponsePopup('fail');
       }))
-  }
+  };
 
   // Выход из аккаунта
   const handleSignOut = () => {
     localStorage.removeItem('jwt');
     setLoggedIn(false);
-  }
+  };
 
   //Лайк карточки
   const handleCardLike = (card) => {
@@ -132,7 +131,7 @@ function App() {
   // Удаление карточки
   const handleCardDeleteClick = (card) => {
     setIsDeleteCardPopup(card);
-  }
+  };
 
   const handleCardDelete = (card) => {
     api.deleteCard(card._id)
@@ -183,19 +182,19 @@ function App() {
 
   const handleCardClick = (cardData) => {
     setSelectedCard(cardData);
-  }
+  };
 
   const handleEditAvatarClick = () => {
     setIsEditAvatarPopupOpen(true);
-  }
+  };
 
   const handleEditProfileClick = () => {
     setIsEditProfilePopupOpen(true);
-  }
+  };
 
   const handleAddPlaceClick = () => {
     setIsAddPlacePopupOpen(true);
-  }
+  };
 
   const closeAllPopups = () => {
     setIsEditAvatarPopupOpen(false);
@@ -204,7 +203,7 @@ function App() {
     setSelectedCard(null);
     setIsDeleteCardPopup(null);
     setIsRegisterResponsePopup('');
-  }
+  };
 
   return (
 
