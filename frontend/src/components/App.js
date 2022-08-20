@@ -66,16 +66,16 @@ function App() {
 
   // установить email текущего пользователя в шапке сайта
   const handleEmailHeader = () => {
-      getUserData()
-        .then((user) => {
-          if (user) {
-            setUserEmail(user.email);
-            setLoggedIn(true);
-          }
-        })
-        .catch((err => {
-          console.log(err);
-        }))
+    getUserData()
+      .then((user) => {
+        if (user) {
+          setUserEmail(user.email);
+          setLoggedIn(true);
+        }
+      })
+      .catch((err => {
+        console.log(err);
+      }))
   };
 
   // Регистрация
@@ -161,7 +161,8 @@ function App() {
   const handleUpdateAvatar = (dataEditAvatar) => {
     api.changeAvatar(dataEditAvatar.avatar)
       .then((avatarData) => {
-        setCurrentUser(avatarData);
+        setCurrentUser(data => data.avatar = avatarData);
+        console.log(currentUser);
         closeAllPopups();
       })
       .catch(err => {
