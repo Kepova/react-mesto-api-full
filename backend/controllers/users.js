@@ -88,7 +88,7 @@ const login = (req, res, next) => {
         httpOnly: true,
         sameSite: 'none',
         secure: true,
-      }).json({ email: user.email }, token);
+      }).json({ email: user.email });
     })
     .catch(next);
 };
