@@ -5,10 +5,9 @@ const NotFoundError = require('../errors/not-found-err');
 const BadRequestError = require('../errors/bad-request-err');
 const ConflictError = require('../errors/conflict-err');
 
-const { NODE_ENV, JWT_SECRET, SALT_ROUNDS } = process.env;
+const { NODE_ENV, JWT_SECRET } = process.env;
 
-// const JWT_SECRET = '4cd0e940dc8ed3847be726922d7252b954eeb37d95fbbb090d3e8a33dfafa7f8';
-// const SALT_ROUNDS = 10;
+const SALT_ROUNDS = 10;
 
 const CREATED = 201;
 
@@ -44,7 +43,7 @@ const createUser = (req, res, next) => {
     email,
     password,
   } = req.body;
-  bcrypt.hash(password, NODE_ENV === 'production' ? SALT_ROUNDS : 10)
+  bcrypt.hash(password, SALT_ROUNDS)
     .then((hash) => {
       User.create({
         name,
