@@ -12,7 +12,7 @@ const NotFoundError = require('./errors/not-found-err');
 const CentralizedError = require('./errors/centralized-error');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT } = process.env;
+const { PORT, NODE_ENV } = process.env;
 const app = express();
 
 const allowedCors = [
@@ -83,4 +83,4 @@ app.use(errorLogger); // логгер ошибок
 app.use(errors());
 app.use(CentralizedError);
 
-app.listen(PORT);
+app.listen(NODE_ENV === 'production' ? PORT : 3000);
