@@ -66,7 +66,7 @@ class Api {
     console.log(id);
     console.log(isLiked);
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
-      method: `${isLiked ? 'PUT' : 'DELETE'}`,
+      method: `${!isLiked ? 'PUT' : 'DELETE'}`,
       credentials: 'include',
       headers: this._headers,
     })
@@ -76,6 +76,7 @@ class Api {
   changeAvatar(avatar) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
+      credentials: 'include',
       headers: this._headers,
       body: JSON.stringify({
         avatar
