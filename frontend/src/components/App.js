@@ -106,7 +106,6 @@ function App() {
 
   // Выход из аккаунта
   const handleSignOut = () => {
-    localStorage.removeItem('jwt');
     setLoggedIn(false);
   };
 
