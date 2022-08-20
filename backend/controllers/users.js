@@ -96,6 +96,8 @@ const login = (req, res, next) => {
 
 const getСurrentUser = (req, res, next) => {
   const userCurrentId = req.user._id;
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+
   User.findById(userCurrentId)
     .then((user) => {
       if (!user) {
