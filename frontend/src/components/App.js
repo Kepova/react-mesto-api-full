@@ -51,9 +51,7 @@ function App() {
               link: card.link,
               likes: card.likes,
               _id: card._id,
-              owner: {
-                _id: card.owner._id
-              }
+              owner: card.owner._id
             };
           })
           setCards(cardsData);
