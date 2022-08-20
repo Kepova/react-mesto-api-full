@@ -76,7 +76,7 @@ const createUser = (req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-  res.header('Access-Control-Allow-Origin', req.headers.ConflictErrororigin);
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
   res.header('Access-Control-Allow-Credentials', true);
   // const allowedCors = [
   //   'https://mesto.kepova.nomoredomains.sbs',
