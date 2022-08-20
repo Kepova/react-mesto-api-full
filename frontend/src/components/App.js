@@ -161,7 +161,7 @@ function App() {
   const handleUpdateAvatar = (dataEditAvatar) => {
     api.changeAvatar(dataEditAvatar.avatar)
       .then((avatarData) => {
-        setCurrentUser(data => data.avatar = avatarData);
+        setCurrentUser(avatarData);
         console.log(currentUser);
         closeAllPopups();
       })
