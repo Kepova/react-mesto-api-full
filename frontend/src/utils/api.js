@@ -57,14 +57,13 @@ class Api {
   deleteCard(id) {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: 'DELETE',
+      credentials: 'include',
       headers: this._headers
     })
       .then(this._checkResponse)
   }
 
   changeLikeCardStatus(id, isLiked) {
-    console.log(id);
-    console.log(isLiked);
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: `${isLiked ? 'PUT' : 'DELETE'}`,
       credentials: 'include',
@@ -89,7 +88,6 @@ class Api {
 export const api = new Api({
   baseUrl: 'https://api.mesto.kepova.nomoredomains.sbs',
   headers: {
-    // authorization: '4a199308-096c-41cb-b4ac-4703709cab9f',
     'access-control-request-headers': 'https://mesto.kepova.nomoredomains.sbs',
     'Content-Type': 'application/json'
   }
