@@ -18,7 +18,7 @@ function Login(props) {
     const handleLogin = (e) => {
         e.preventDefault();
         if (!formUserData.email || !formUserData.password) {
-            return
+            return;
         }
         props.onLogin({ email: formUserData.email, password: formUserData.password })
     };

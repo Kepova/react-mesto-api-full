@@ -6,10 +6,6 @@ const CheckResponse = (res) => {
     } else {
         return Promise.reject(`Ошибка: ${res.status}`)
     }
-    // return res
-    //     .then((data) => {
-    //     throw new Error(data.message);
-    // })
 }
 
 export const register = ({ email, password }) => {
@@ -44,7 +40,6 @@ export const getUserData = () => {
         headers: {
             "access-control-request-headers": "https://mesto.kepova.nomoredomains.sbs",
             "Content-Type": "application/json",
-            // "Authorization": `Bearer ${jwt}`
         }
     })
         .then(CheckResponse)

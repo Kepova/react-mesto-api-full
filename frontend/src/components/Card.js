@@ -18,7 +18,6 @@ function Card({ card, onCardClick, onCardLike, onCardDeletePopup }) {
 
     // Отображение кнопки удаления карточки
     const isOwn = card.owner === currentUser._id;
-    console.log(card, isOwn);
 
     const cardDeleteButtonClassName = `element__delete-button ${isOwn ? 'element__delete-button_active' : 'element__delete-button_hidden'}`;
 

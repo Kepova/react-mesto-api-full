@@ -40,11 +40,9 @@ function App() {
       history.push('/');
       Promise.all([api.getUser(), api.getInitialCards()])
         .then(([userData, PreCardsData]) => {
-          console.log(userData);
           // установка данных пользователя
           setCurrentUser(userData);
           //начальные карточки
-          console.log(PreCardsData);
           const cardsData = PreCardsData.map((card) => {
             return {
               name: card.name,
@@ -95,15 +93,13 @@ function App() {
   const handleLogin = ({ email, password }) => {
     login({ email, password })
       .then((data) => {
-        console.log(data);
         if (data) {
-          // localStorage.setItem('jwt', data.token);
           setLoggedIn(true);
           history.push('/');
         }
       })
       .catch((err => {
-        console.log(err, 'no');
+        console.log(err);
         setIsRegisterResponsePopup('fail');
       }))
   };
@@ -147,7 +143,6 @@ function App() {
     api.addCard(card.name, card.link)
       .then((newCard) => {
         setCards([newCard, ...cards]);
-        console.log(newCard);
         closeAllPopups();
       })
       .catch(err => {
@@ -160,7 +155,6 @@ function App() {
     api.changeAvatar(dataEditAvatar.avatar)
       .then((avatarData) => {
         setCurrentUser(avatarData);
-        console.log(currentUser);
         closeAllPopups();
       })
       .catch(err => {

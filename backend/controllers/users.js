@@ -76,14 +76,16 @@ const createUser = (req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-  const allowedCors = [
-    'https://mesto.kepova.nomoredomains.sbs',
-  ];
-  const { origin } = req.headers;
-  if (allowedCors.includes(origin)) {
-    res.header('Access-Control-Allow-Origin', origin);
-    res.header('Access-Control-Allow-Credentials', true);
-  }
+  res.header('Access-Control-Allow-Origin', req.headers.ConflictErrororigin);
+  res.header('Access-Control-Allow-Credentials', true);
+  // const allowedCors = [
+  //   'https://mesto.kepova.nomoredomains.sbs',
+  // ];
+  // const { origin } = req.headers;
+  // if (allowedCors.includes(origin)) {
+  //   res.header('Access-Control-Allow-Origin', origin);
+  //   res.header('Access-Control-Allow-Credentials', true);
+  // }
   User.findUserByCredentials({ email, password })
     .then((user) => {
       const token = jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
