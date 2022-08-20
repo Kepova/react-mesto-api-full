@@ -17,12 +17,12 @@ function Card({ card, onCardClick, onCardLike, onCardDeletePopup }) {
     }
 
     // Отображение кнопки удаления карточки
-    const isOwn = card.owner._id === currentUser._id;
+    const isOwn = card.owner === currentUser._id;
 
     const cardDeleteButtonClassName = `element__delete-button ${isOwn ? 'element__delete-button_active' : 'element__delete-button_hidden'}`;
 
     // Отображение кнопки лайка
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id);
 
     const cardLikeButtonClassName = `element__like ${isLiked ? 'element__like_active' : ''}`;
 
