@@ -17,6 +17,7 @@ const app = express();
 
 const allowedCors = [
   'https://mesto.kepova.nomoredomains.sbs',
+  'http://mesto.kepova.nomoredomains.sbs',
 ];
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
@@ -45,6 +46,7 @@ app.use((req, res, next) => {
   }
   next();
 });
+
 // краш-тест сервера
 app.get('/crash-test', () => {
   setTimeout(() => {
