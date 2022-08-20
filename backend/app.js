@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -11,7 +12,7 @@ const NotFoundError = require('./errors/not-found-err');
 const CentralizedError = require('./errors/centralized-error');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3000 } = process.env;
+const { PORT } = process.env;
 const app = express();
 
 const allowedCors = [

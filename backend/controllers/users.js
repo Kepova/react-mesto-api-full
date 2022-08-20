@@ -5,8 +5,10 @@ const NotFoundError = require('../errors/not-found-err');
 const BadRequestError = require('../errors/bad-request-err');
 const ConflictError = require('../errors/conflict-err');
 
-const JWT_SECRET = '4cd0e940dc8ed3847be726922d7252b954eeb37d95fbbb090d3e8a33dfafa7f8';
-const SALT_ROUNDS = 10;
+const { NODE_ENV, JWT_SECRET, SALT_ROUNDS } = process.env;
+
+// const JWT_SECRET = '4cd0e940dc8ed3847be726922d7252b954eeb37d95fbbb090d3e8a33dfafa7f8';
+// const SALT_ROUNDS = 10;
 
 const CREATED = 201;
 
@@ -78,17 +80,10 @@ const login = (req, res, next) => {
   const { email, password } = req.body;
   res.header('Access-Control-Allow-Origin', req.headers.origin);
   res.header('Access-Control-Allow-Credentials', true);
-  // const allowedCors = [
-  //   'https://mesto.kepova.nomoredomains.sbs',
-  // ];
-  // const { origin } = req.headers;
-  // if (allowedCors.includes(origin)) {
-  //   res.header('Access-Control-Allow-Origin', origin);
-  //   res.header('Access-Control-Allow-Credentials', true);
-  // }
+
   User.findUserByCredentials({ email, password })
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
       res.cookie('jwt', token, {
         maxAge: 3600000 * 24 * 7,
         httpOnly: true,
