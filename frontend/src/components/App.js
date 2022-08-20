@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
     handleEmailHeader();
-  }, [loggedIn]);
+  }, [currentUser]);
 
   // Получение данных
   useEffect(() => {
