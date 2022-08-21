@@ -38,7 +38,7 @@ UserRouter.patch(
   '/me/avatar',
   celebrate({
     body: Joi.object().keys({
-      avatar: Joi.string().pattern(regexUrl),
+      avatar: Joi.string().pattern(new RegExp(regexUrl)),
     }),
   }),
   updateAvatar,
