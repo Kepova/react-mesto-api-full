@@ -1,6 +1,6 @@
 # react-mesto-api-full
 Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями.
   
-mesto.kepova.nomoredomains.sbs - [ссылка на сайт](mesto.kepova.nomoredomains.sbs), размещенный на Яндекс.Облаке.
+https://mesto.kepova.nomoredomains.sbs - [ссылка на сайт](https://mesto.kepova.nomoredomains.sbs), размещенный на Яндекс.Облаке.
 
 Публичный IP - 84.201.158.157
