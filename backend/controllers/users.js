@@ -93,6 +93,11 @@ const login = (req, res, next) => {
     .catch(next);
 };
 
+const outLogin = (req, res, next) => {
+  res.clearCookie('jwt').send({ message: 'Выход из профиля' });
+  next();
+};
+
 const getСurrentUser = (req, res, next) => {
   const userCurrentId = req.user._id;
   res.header('Access-Control-Allow-Origin', req.headers.origin);
@@ -160,4 +165,5 @@ module.exports = {
   updateAvatar,
   login,
   getСurrentUser,
+  outLogin,
 };

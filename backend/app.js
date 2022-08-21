@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const { celebrate, Joi, errors } = require('celebrate');
 const UserRouter = require('./routes/users');
 const CardsRouter = require('./routes/cards');
-const { createUser, login } = require('./controllers/users');
+const { createUser, login, outLogin } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/not-found-err');
 const CentralizedError = require('./errors/centralized-error');
@@ -77,6 +77,10 @@ app.post(
     }),
   }),
   createUser,
+);
+app.get(
+  './signout',
+  outLogin,
 );
 
 app.use(auth);

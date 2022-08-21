@@ -33,6 +33,19 @@ export const login = ({ email, password }) => {
         .then(CheckResponse)
 }
 
+export const outLogin = () => {
+    return fetch(`${BASE_URL}/signout`, {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+            "access-control-request-headers": "https://mesto.kepova.nomoredomains.sbs",
+            "Content-Type": "application/json"
+        }
+    })
+        .then(CheckResponse)
+}
+
+
 export const getUserData = () => {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
