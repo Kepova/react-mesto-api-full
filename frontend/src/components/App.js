@@ -14,7 +14,7 @@ import ProtectedRoute from './ProtectedRoute';
 import Login from './Login';
 import Register from './Register';
 import InfoTooltip from './InfoTooltip';
-import { register, login, getUserData } from '../utils/mestoAuth';
+import { register, login, getUserData, outLogin } from '../utils/mestoAuth';
 import { outLogin } from '../../../backend/controllers/users';
 
 function App() {
