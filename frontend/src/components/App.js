@@ -31,7 +31,9 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
-    handleEmailHeader();
+    if(loggedIn) {
+      handleEmailHeader();
+    } 
   }, [currentUser]);
 
   // Получение данных
