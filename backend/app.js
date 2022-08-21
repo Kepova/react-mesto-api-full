@@ -79,7 +79,7 @@ app.post(
   createUser,
 );
 app.get(
-  './signout',
+  '/signout',
   outLogin,
 );
 
