@@ -4,6 +4,7 @@ const { celebrate, Joi } = require('celebrate');
 const {
   getCards, createCard, deleteCard, likeCard, dislikeCard,
 } = require('../controllers/cards');
+const regexUrl = require('../constants/constants');
 
 const validationId = (value) => {
   if (isObjectIdOrHexString(value)) {
@@ -24,7 +25,7 @@ CardsRouter.post(
   celebrate({
     body: Joi.object().keys({
       name: Joi.string().required().min(2).max(30),
-      link: Joi.string().required().pattern(/^(https?:\/\/)(www\.)?([\w\d\-.$])+[a-z]{2,10}\/(([a-z\d\W_-]{2,})*([#]$)?)?/),
+      link: Joi.string().required().pattern(regexUrl),
     }),
   }),
   createCard,

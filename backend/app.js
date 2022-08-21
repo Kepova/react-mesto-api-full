@@ -11,6 +11,7 @@ const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/not-found-err');
 const CentralizedError = require('./errors/centralized-error');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const regexUrl = require('./constants/constants');
 
 const { PORT, NODE_ENV } = process.env;
 const app = express();
@@ -70,7 +71,7 @@ app.post(
     body: Joi.object().keys({
       name: Joi.string().min(2).max(30),
       about: Joi.string().min(2).max(30),
-      avatar: Joi.string().pattern(/^(https?:\/\/)(www\.)?([\w\d\-.$])+[a-z]{2,10}\/?(([a-z\d\W_-]{2,})*([#]$)?)?/),
+      avatar: Joi.string().pattern(regexUrl),
       email: Joi.string().required().email(),
       password: Joi.string().required().min(8),
     }),

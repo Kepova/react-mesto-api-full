@@ -4,6 +4,7 @@ const { celebrate, Joi } = require('celebrate');
 const {
   getUsers, getUser, updateUser, updateAvatar, getСurrentUser,
 } = require('../controllers/users');
+const regexUrl = require('../constants/constants');
 
 const validationId = (value) => {
   if (isObjectIdOrHexString(value)) {
@@ -37,7 +38,7 @@ UserRouter.patch(
   '/me/avatar',
   celebrate({
     body: Joi.object().keys({
-      avatar: Joi.string().pattern(/^(https?:\/\/)(www\.)?([\w\d\-.$])+[a-z]{2,10}\/?(([a-z\d\W_-]{2,})*([#]$)?)?/),
+      avatar: Joi.string().pattern(regexUrl),
     }),
   }),
   updateAvatar,
