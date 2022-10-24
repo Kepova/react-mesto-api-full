@@ -3,4 +3,4 @@
   
 https://mesto.kepova.nomoredomains.sbs - [ссылка на сайт](https://mesto.kepova.nomoredomains.sbs), размещенный на Яндекс.Облаке.
 
-Публичный IP - 84.201.158.157
+Публичный IP - 130.193.38.52
