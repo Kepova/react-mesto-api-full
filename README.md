@@ -19,7 +19,7 @@
 - Grid,
 - Flex,
 - БЭМ,
-- валидация React,
+- валидация HTML и JS,
 - Node.js,
 - Express,
 - MongoDB,
