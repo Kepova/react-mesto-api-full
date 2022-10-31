@@ -26,6 +26,6 @@
 - Ubuntu.
 
 ## Запуск проекта:
-* ссылка на фронтенд - https://mesto.kepova.nomoredomains.sbs
-* бэкенд проекта - https://api.mesto.kepova.nomoredomains.sbs
-* публичный IP сервера - 130.193.38.52
+* ссылка на фронтенд - https://mesto.kepova.nomoredomains.sbs,
+* бэкенд проекта - https://api.mesto.kepova.nomoredomains.sbs,
+* публичный IP сервера - 130.193.38.52.
