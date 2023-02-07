@@ -26,6 +26,11 @@
 - Ubuntu.
 
 ## Запуск проекта:
-* ссылка на фронтенд - https://mesto.kepova.nomoredomains.sbs,
-* бэкенд проекта - https://api.mesto.kepova.nomoredomains.sbs,
-* публичный IP сервера - 130.193.38.52
+* скачать код,
+* установить зависимости - npm install,
+* запустить бэкенд - npm start,
+* запустить фронтенд - npm start.
+
+## Ссылки на проект
+* ссылка на фронтенд - https://mesto.kepova.nomoredomains.sbs - не работает, запуск возможен по требованию,
+* бэкенд проекта - https://api.mesto.kepova.nomoredomains.sbs - не работает, запуск возможен по требованию.
