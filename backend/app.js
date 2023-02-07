@@ -96,4 +96,4 @@ app.use(errorLogger); // логгер ошибок
 app.use(errors());
 app.use(CentralizedError);
 
-app.listen(NODE_ENV === 'production' ? PORT : 3000);
+app.listen(NODE_ENV === 'production' ? PORT : 3001);
